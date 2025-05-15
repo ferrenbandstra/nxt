@@ -1,77 +1,83 @@
-# nxt
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NXT Freerunning</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: sans-serif;
+      color: white;
+      background-color: black;
     }
-    header {
-      background: url('https://images.unsplash.com/photo-1520975918108-7e0e2e6e7db4') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .video-background iframe {
+      width: 100vw;
+      height: 56.25vw; /* 16:9 verhouding */
+      min-height: 100vh;
+      min-width: 177.77vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 100px 20px;
       text-align: center;
+      background: rgba(0,0,0,0.6);
     }
-    header h1 {
+
+    h1 {
       font-size: 4em;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
     }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+
+    .section {
+      padding: 60px 20px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
+
     footer {
-      text-align: center;
+      background: rgba(0,0,0,0.7);
       padding: 20px;
-      background: #222;
-    }
-    .share-link {
-      background: #fff;
-      color: #111;
-      padding: 10px;
-      border-radius: 5px;
-      text-decoration: none;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<header>
+<div class="video-background">
+  <iframe src="https://www.youtube.com/embed/Oyu8Cif6L5A?autoplay=1&mute=1&controls=0&loop=1&playlist=Oyu8Cif6L5A&modestbranding=1&showinfo=0&rel=0"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen>
+  </iframe>
+</div>
+
+<div class="content">
   <h1>NXT Freerunning</h1>
-</header>
+  <p>Pure stijl. Pure kracht. Pure vrijheid.</p>
+</div>
 
-<section>
-  <h2>Onze Freerunners</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1590650046871-92c887d1f1b2" alt="Freerunner 1">
-    <img src="https://images.unsplash.com/photo-1597239453224-9bfe7d89f85d" alt="Freerunner 2">
-    <img src="https://images.unsplash.com/photo-1531312267120-2d5c75f07c1c" alt="Freerunner 3">
-  </div>
-</section>
-
-<section>
-  <h2>Deel deze pagina</h2>
-  <p>Kopieer en deel de link hieronder:</p>
-  <a href="#" class="share-link">https://nxtfreerunning.nl</a>
+<section class="section">
+  <h2>Onze Moves</h2>
+  <p>Bekijk onze community in actie – freerunning zoals je het nog nooit hebt gezien.</p>
 </section>
 
 <footer>
